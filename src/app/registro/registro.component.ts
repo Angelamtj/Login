@@ -24,21 +24,22 @@ export class RegistroComponent implements OnInit {
 
     this.usuario.fecha = new Date().toString();
 
-    if(this.usuario.nombre == null ){
-       alert("Usuario requerido");
+    if(this.usuario.nombre == "" || this.usuario.apellido == "" || this.usuario.genero == "" || this.usuario.email == ""
+    || this.usuario.usuario == "" || this.usuario.password == "" || this.usuario.password2 == ""){
+       alert("No pueden haber campos vacíos!");
     }else{
 
     this._service.registerFromRemote(this.usuario).subscribe(
       
       data => {
 
-        console.log("response received");
+        console.log("response received", data);
         this._router.navigate(['/login']);
       
       },
       error => {
 
-        console.log("exception ocurred");
+        console.log("exception ocurred", error);
         this.msg=error.error;
         
       }

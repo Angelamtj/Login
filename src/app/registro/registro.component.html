@@ -20,8 +20,9 @@
         </div>
 
         <div class="form-group">
+            <label for="genero">Genero:</label>
             <select class="form-select" aria-label="Default select example" name="cgenero" [(ngModel)]="usuario.genero" #cgenero="ngModel"required >
-                <option selected>Género</option>
+                <option value="" selected disabled>Seleccionar opción</option>
                 <option value="F">Femenino</option>
                 <option value="M">Masculino</option>
                 <option value="O">Otro</option>
@@ -51,7 +52,7 @@
 
         <div class="form-group">
             <label for="pwd">Contraseña:</label>
-            <input type="password" class="form-control"placeholder="Enter password" name="cpassword"[(ngModel)]="usuario.password"required #cpassword="ngModel"
+            <input type="password" class="form-control"placeholder="Ingresar contraseña" name="cpassword"[(ngModel)]="usuario.password"required #cpassword="ngModel"
             [class.is_invalid]="cpassword.invalid && cpassword.touched">
     
             <small class="text-danger"[class.d-none]= "cpassword.valid || cpassword.untouched">Contraseña es campo requerido</small>   
@@ -59,7 +60,7 @@
 
         <div class="form-group">
             <label for="pwds">Repite Contraseña:</label>
-            <input type="password" class="form-control"placeholder="Repeat password" name="password"[(ngModel)]="usuario.password2"required #cpassword2="ngModel"
+            <input type="password" class="form-control"placeholder="Repetir contraseña" name="password"[(ngModel)]="usuario.password2"required #cpassword2="ngModel"
             [class.is_invalid]="cpassword2.invalid && cpassword2.touched">
             <small class="text-danger" [class.d-none]="(cpassword2.value == cpassword.value) || cpassword2.untouched">
             Contraseñas no coinciden</small>

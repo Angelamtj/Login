@@ -26,6 +26,6 @@ export class RegistroService {
 
   public registrarUltimoIngreso(usuario:Usuario):Observable<any>{
 
-    return this._http.post("http://localhost:8091/registro/registroultimo",usuario)
+    return this._http.put("http://localhost:8091/registro/registroultimo",usuario)
   }
 }

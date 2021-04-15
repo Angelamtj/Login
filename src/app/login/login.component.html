@@ -1,4 +1,4 @@
-<div style="min-width: 100%;min-height:200%;background-image: url('../assets/img/cielo.jpg');">
+<div style="background-image: url('../assets/img/cielo.jpg');">
 
   <br>
 
@@ -32,15 +32,14 @@
         <label><input type="checkbox" name="remember"> Remember me</label>
       </div>
       <button [disabled] ="loginform.form.invalid"type="submit" class="btn btn-info">Login</button>
+      <small class="float-right"[routerLink]="['/registro']">
+        ¿No tienes una cuenta?
+        <button class="btn btn-info">
+          Regístrate
+        </button>
+      </small>
     </form>
-
-    <small class="float-right"[routerLink]="['/registro']">
-      ¿No tienes una cuenta?
-      <button class="btn btn-info">
-        Regístrate
-      </button>
-    
-    </small>
+    <br><br>
   </div>
+  <br><br><br><br><br><br><br><br>
 </div>
-<br><br><br><br>

@@ -12,8 +12,6 @@ export class Usuario {
     password2:string="";
 
     constructor(){
-        
-
     }
     
 }

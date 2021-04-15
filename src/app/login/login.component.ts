@@ -42,8 +42,14 @@ msg = "";
 
         },
         error => {
-        console.log("exception ocurred");
-        this.msg="Datos incorrectos, Por favor ingresa un email y contraseña validos";
+          if(error.error.message === "Credenciales incorrectas"){
+            this.msg="Credenciales incorrectas";
+          }else if(error.error.message === "Usuario no existe"){
+            this.msg="El usuario ingresado no existe";
+          }else{
+            this.msg="Ocurrió un error: "+ error;
+          }
+        console.log("exception ocurred ", error);
         }
       )
 
