@@ -46,6 +46,8 @@ msg = "";
             this.msg="Credenciales incorrectas";
           }else if(error.error.message === "Usuario no existe"){
             this.msg="El usuario ingresado no existe";
+          }else if(error.error.message === "Usuario bloqueado"){
+            this.msg="El usuario se encuentra bloqueado";
           }else{
             this.msg="Ocurrió un error: "+ error;
           }

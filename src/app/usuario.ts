@@ -10,7 +10,8 @@ export class Usuario {
     fecha:string="";
     ultimoingreso:string="";
     password2:string="";
-
+    cuentanobloqueada:boolean=true;
+    
     constructor(){
     }
     
