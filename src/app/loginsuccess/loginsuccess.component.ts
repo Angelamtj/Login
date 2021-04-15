@@ -33,16 +33,14 @@ export class LoginsuccessComponent implements OnInit {
     this.fecha = fecha1!=null?fecha1:new Date().toString();
     let usuario1 = localStorage.getItem("usuario");
     this.usuario = usuario1!=null?usuario1:"";
-    /* let id1 = localStorage.getItem("id");
-    this.id = Number(id1); */
+   
 
-    
 
     this.saludo = (this.fechaSaludo.getHours() < 12)?"Buenos dias ":(this.fechaSaludo.getHours() < 18)?"Buenas tardes":"Buenas noches";
 
     this.usuarioenviar.usuario=this.usuario;
     this.usuarioenviar.ultimoingreso = new Date().toString();
-    this.usuarioenviar.usuario = this.usuario;
+    
 
     this.usuarioenviar.ultimoingreso = new Date().toString();
     if(this.usuarioenviar.ultimoingreso == null || this.usuarioenviar.ultimoingreso == ""){
@@ -57,8 +55,7 @@ export class LoginsuccessComponent implements OnInit {
   }
 
   cerrarSesion(){
-    console.log("AA: ", this.usuarioenviar);
-    // usuarioNuevo = this.usuarioenviar;
+    
     this._service.registrarUltimoIngreso(this.usuarioenviar).subscribe(
       data => {
         console.log("response received", data);
@@ -67,7 +64,7 @@ export class LoginsuccessComponent implements OnInit {
       },
       error => {
         console.log("exception ocurred", error);
-        // this.msg=error.error;
+        
       }
     );
   }
